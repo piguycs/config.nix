@@ -14,8 +14,15 @@
     };
   };
 
+  users.users.kunal = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ]
+  };
+
   environment.systemPackages = with pkgs; [
     git
     vim
   ];
+
+  security.sudo.wheelNeedsPassword = true;
 }
