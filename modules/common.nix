@@ -32,15 +32,9 @@
     };
   };
 
-  services.greetd = {
-    enable = true;
-    useTextGreeter = true;
-    settings = {
-      default_session = {
-        user = "greeter";
-        command = "${lib.getExe pkgs.tuigreet} --user-menu --cmd niri-session";
-      };
-    };
+  services.displayManager = {
+    plasma-login-manager.enable = true;
+    defaultSession = "niri";
   };
 
   environment.systemPackages = with pkgs; [
