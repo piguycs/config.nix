@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   nix = {
@@ -26,6 +26,25 @@
     };
 
     nano.enable = false;
+
+    niri = {
+      enable = true;
+    };
+  };
+
+  services.displayManager = {
+    defaultSession = "niri";
+  };
+
+  services.greetd = {
+    enable = true;
+    useTextGreeter = true;
+    settings = {
+      default_session = {
+        user = "greeter";
+        command = "${lib.getExe pkgs.tuigreet}";
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
