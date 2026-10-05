@@ -24,6 +24,8 @@
       enable = true;
       defaultEditor = true;
     };
+
+    nano.enable = false;
   };
 
   environment.systemPackages = with pkgs; [
