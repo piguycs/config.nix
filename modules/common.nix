@@ -32,17 +32,13 @@
     };
   };
 
-  services.displayManager = {
-    defaultSession = "niri";
-  };
-
   services.greetd = {
     enable = true;
     useTextGreeter = true;
     settings = {
       default_session = {
         user = "greeter";
-        command = "${lib.getExe pkgs.tuigreet}";
+        command = "${lib.getExe pkgs.tuigreet} --user-menu --cmd niri-session";
       };
     };
   };
