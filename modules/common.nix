@@ -24,5 +24,11 @@
     vim
   ];
 
+  security = {
+    sudo-rs = {
+      enable = true;
+    };
+  };
+
   security.sudo.wheelNeedsPassword = true;
 }
