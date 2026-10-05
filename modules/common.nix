@@ -19,9 +19,15 @@
     extraGroups = [ "wheel" "networkmanager" ];
   };
 
+  programs = {
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     git
-    vim
   ];
 
   security = {
