@@ -13,11 +13,11 @@
     };
   };
 
-  outputs = { nixpkgs, disko, ... }: {
+  outputs = { nixpkgs, disko, mikuPlymouth, ... }: {
     nixosConfigurations.nix-test-vm = nixpkgs.lib.nixosSystem {
       modules = [
         disko.nixosModules.disko
-          mikuPlymouth.nixosModules.default
+        mikuPlymouth.nixosModules.default
         ./hosts/nix-test-vm
       ];
     };
