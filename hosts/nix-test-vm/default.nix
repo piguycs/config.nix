@@ -20,7 +20,7 @@
     #};
     plymouth = {
       enable = true;
-      themePackages = [ pkgs.mikuPlymouthFull ];
+      themePackages = [ pkgs.mikuPlymouth ];
       theme = "MikuPlymouth";
     };
 
