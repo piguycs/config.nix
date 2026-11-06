@@ -16,7 +16,7 @@
   boot = {
     plymouth = {
       enable = true;
-      theme = "bgrt";
+      theme = "fade-in";
     };
 
     consoleLogLevel = 3;
@@ -25,6 +25,6 @@
   };
 
   services.openssh.enable = true;
-
-  system.stateVersion = "26.05";
+ 
+  system.stateVersion = "26.05"; # DO NOT EVER MODIFY
 }
