@@ -14,9 +14,14 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot = {
+    #plymouth = {
+    #  enable = true;
+    #  theme = "fade-in";
+    #};
     plymouth = {
       enable = true;
-      theme = "fade-in";
+      themePackages = [ pkgs.mikuPlymouthFull ];
+      theme = "MikuPlymouth";
     };
 
     consoleLogLevel = 3;

@@ -7,12 +7,17 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mikuPlymouth = {
+      url = "github:Thang1191/MikuPlymouth";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, disko, ... }: {
     nixosConfigurations.nix-test-vm = nixpkgs.lib.nixosSystem {
       modules = [
         disko.nixosModules.disko
+          mikuPlymouth.nixosModules.default
         ./hosts/nix-test-vm
       ];
     };
