@@ -26,15 +26,6 @@
     };
 
     nano.enable = false;
-
-    niri = {
-      enable = true;
-    };
-  };
-
-  services.displayManager = {
-    plasma-login-manager.enable = true;
-    defaultSession = "niri";
   };
 
   environment.systemPackages = with pkgs; [
@@ -46,12 +37,7 @@
     sudo-rs = {
       enable = true;
     };
+
+    sudo.wheelNeedsPassword = true;
   };
-
-  security.sudo.wheelNeedsPassword = true;
-
-  systemd.tmpfiles.rules = [
-    "d /var/lib/plasmalogin/.config 0755 plasmalogin plasmalogin -"
-    "L+ /var/lib/plasmalogin/.config/kdeglobals - - - - ${pkgs.kdePackages.breeze}/share/color-schemes/BreezeDark.colors"
-  ];
 }

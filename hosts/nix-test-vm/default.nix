@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./disko.nix
     ./hardware-configuration.nix
     ../../modules/common.nix
   ];
