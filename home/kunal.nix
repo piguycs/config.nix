@@ -15,7 +15,7 @@
       settings = {
         theme = "Kanagawa Wave";
         window-theme = "ghostty";
-        font-family = "Iosevka Nerd Font Mono";
+        font-family = "Iosevka Nerd Font";
         font-size = 15;
       };
     };
