@@ -7,6 +7,7 @@
     ../../modules/networking.nix
     ../../modules/firefox.nix
     ../../modules/editor.nix
+    ../../modules/gnome.nix
   ];
 
   networking.hostName = "enma";
@@ -40,10 +41,6 @@
   # ---- everything below this line should probably be modified to be separate ----
   # it is currently being directly copied from the configuration, so it has
   # gnome and other stuff I may not use
-
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
 
   services.fprintd.enable = true;
 
