@@ -10,17 +10,23 @@
       initLua = builtins.readFile ./nvim.lua;
     };
 
-
     ghostty = {
       enable = true;
       settings = {
         theme = "Kanagawa Wave";
         window-theme = "ghostty";
+        font-family = "Iosevka Nerd Font Mono";
+        font-size = 15;
       };
     };
   };
 
+  fonts.fontconfig.enable = true;
+
   home.packages = with pkgs; [
+    # fonts
+    nerd-fonts.iosevka
+    # general tools which I use
     btop
   ];
 
