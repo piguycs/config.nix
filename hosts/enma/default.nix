@@ -4,7 +4,7 @@
     inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series3
     ./hardware-configuration.nix
 
-    ../../modules/home.nix
+    ../../modules/home-manager.nix
 
     ../../modules/commonNew.nix
     ../../modules/timezone.nix
