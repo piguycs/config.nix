@@ -39,6 +39,8 @@
       efi.canTouchEfiVariables = true;
     };
 
+    resumeDevice = "/dev/mapper/luks-be1fe8a0-eeca-4e32-b45c-257eb5a0be8f";
+
     initrd.luks.devices."luks-be1fe8a0-eeca-4e32-b45c-257eb5a0be8f".device = "/dev/disk/by-uuid/be1fe8a0-eeca-4e32-b45c-257eb5a0be8f";
   };
 
