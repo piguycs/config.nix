@@ -4,9 +4,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    #home-manager = {
+    #  url = "github:nix-community/home-manager";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
-  outputs = { nixpkgs, nixos-hardware, ... }: {
+  outputs = inputs @ { nixpkgs, ... }: {
     nixosConfigurations = {
       nix-test-vm = nixpkgs.lib.nixosSystem {
         modules = [
@@ -15,10 +20,8 @@
       };
 
       enma = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./hosts/enma
-	  nixos-hardware.nixosModules.framework-intel-core-ultra-series3
-        ];
+	specialArgs = { inherit inputs; };
+        modules = [ ./hosts/enma ];
       };
     };
   };

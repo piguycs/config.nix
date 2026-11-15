@@ -1,7 +1,11 @@
-{ pkgs, ... } :
+{ inputs, pkgs, ... } :
 {
   imports = [
+    inputs.nixos-hardware.nixosModules.framework-intel-core-ultra-series3
     ./hardware-configuration.nix
+
+    ../../modules/home.nix
+
     ../../modules/commonNew.nix
     ../../modules/timezone.nix
     ../../modules/networking.nix
