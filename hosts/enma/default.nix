@@ -91,6 +91,8 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     git
+
+    keepassxc # weird thing with polkit rules file, so HM alone is not enough
   ];
 
   system.stateVersion = "26.05"; # DO NOT EVER MODIFY
