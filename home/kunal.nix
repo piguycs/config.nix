@@ -19,6 +19,11 @@
         font-size = 15;
       };
     };
+
+    keepassxc = {
+      enable = true;
+      autostart = true;
+    };
   };
 
   fonts.fontconfig.enable = true;
