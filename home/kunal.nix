@@ -24,6 +24,14 @@
       enable = true;
       autostart = true;
     };
+
+    starship = {
+      enable = true;
+    };
+
+    fish = {
+      enable = true;
+    };
   };
 
   xdg.autostart.enable = true;
