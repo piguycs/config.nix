@@ -32,6 +32,13 @@
     fish = {
       enable = true;
     };
+
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      enableBashIntegration = true;
+      nix-direnv.enable = true;
+    };
   };
 
   xdg.autostart.enable = true;
