@@ -94,6 +94,7 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     git
+    file
 
     keepassxc # weird thing with polkit rules file, so HM alone is not enough
   ];
