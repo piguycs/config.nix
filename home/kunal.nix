@@ -39,6 +39,13 @@
       enableBashIntegration = true;
       nix-direnv.enable = true;
     };
+
+    gnome-shell = {
+      enable = true;
+      extensions = with pkgs.gnomeExtensions; [
+        { package = appindicator; }
+      ];
+    };
   };
 
   xdg.autostart.enable = true;
