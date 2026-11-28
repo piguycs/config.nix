@@ -1,23 +1,30 @@
-{ pkgs, ... } :
+{ config, pkgs, lib, ... } :
+let
+  cfg = config.dots.gnome;
+in
 {
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
-
-  xdg.terminal-exec = {
-    enable = true;
-    settings = {
-      default = [ "com.mitchellh.ghostty.desktop" ];
-    };
+  options.dots.gnome = {
+    enable = lib.mkEnableOption "GNOME desktop";
+    useGhostty = lib.mkEnableOption "Replace gnome-console with ghostty";
   };
 
-  environment = {
-    gnome.excludePackages = with pkgs; [
-      gnome-console
-    ];
+  config = lib.mkMerge [
+    (lib.mkIf cfg.enable {
+      # Enable the GNOME Desktop Environment.
+      services.displayManager.gdm.enable = true;
+      services.desktopManager.gnome.enable = true;
+    })
 
-    systemPackages = with pkgs; [
-      ghostty
-    ];
-  };
+    (lib.mkIf cfg.useGhostty {
+      xdg.terminal-exec = {
+        enable = true;
+        settings.default = [ "com.mitchellh.ghostty.desktop" ];
+      };
+
+      environment = {
+        gnome.excludePackages = with pkgs; [ gnome-console ];
+        systemPackages = with pkgs; [ ghostty ];
+      };
+    })
+  ];
 }

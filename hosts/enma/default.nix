@@ -104,5 +104,10 @@
     keepassxc # weird thing with polkit rules file, so HM alone is not enough
   ];
 
+  dots = {
+    gnome.enable = true;
+    gnome.useGhostty = true;
+  };
+
   system.stateVersion = "26.05"; # DO NOT EVER MODIFY
 }
