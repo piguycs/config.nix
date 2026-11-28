@@ -101,6 +101,10 @@
     git
     file
 
+    # helpers for nix
+    nh
+    nvd
+
     keepassxc # weird thing with polkit rules file, so HM alone is not enough
   ];
 
